@@ -15,7 +15,7 @@ To install noa, follow these steps:
 
 ```sh
 # Clone the repository
-git clone https://github.com/your-repo/noa.git
+git clone https://github.com/kaedehito/noa.git
 cd noa
 
 # Run the installation script
