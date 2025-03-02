@@ -1,0 +1,8 @@
+[workspace]
+members = [
+	"noa-cli/noa-inst",
+	"init-system/initsys",
+	"noa-main/noa",
+]
+
+resolver = "1"
