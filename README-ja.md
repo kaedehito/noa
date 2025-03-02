@@ -15,7 +15,7 @@ noa をインストールするには、以下の手順に従ってください:
 
 ```sh
 # リポジトリをクローン
-git clone https://github.com/your-repo/noa.git
+git clone https://github.com/kaedehito/noa.git
 cd noa
 
 # インストールスクリプトを実行
