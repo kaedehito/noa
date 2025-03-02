@@ -32,8 +32,8 @@ noa install package-name
 # Remove a package
 noa remove package-name
 
-# Update the system
-noa update
+# Update the package list
+noa --sync
 ```
 
 For more commands, run:
