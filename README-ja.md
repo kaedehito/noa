@@ -32,8 +32,8 @@ noa install package-name
 # パッケージを削除
 noa remove package-name
 
-# システムを更新
-noa update
+# パッケージリストを更新
+noa --sync
 ```
 
 詳細なコマンドは以下で確認できます:
