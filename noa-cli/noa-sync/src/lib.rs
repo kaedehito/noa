@@ -1,7 +1,8 @@
 use download_file::download_file;
-use std::fs::{self};
+use std::fs;
 use std::path::Path;
 
+mod checkhash;
 mod download_file;
 mod get_mirror;
 mod macros;
@@ -30,12 +31,11 @@ pub fn sync_package_list() {
         });
     }
 
-    if !path.exists() {
-        info!("Creating package list directory...");
-        fs::create_dir_all(path).unwrap_or_else(|e| {
-            err!("Failed to create package list directory: {e}");
-        })
-    }
+    info!("Checking BLAKE3 hash");
+    checkhash::check_hash().unwrap_or_else(|e| {
+        err!("Failed to check BLAKE3 hash: {e}");
+        return;
+    });
 
     info!("Uncompressing package list");
     uncompress::uncompress().unwrap_or_else(|e| {

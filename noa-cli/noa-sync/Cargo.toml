@@ -13,3 +13,4 @@ indicatif = "0.17.11"
 reqwest = { version = "0.12.12", features = ["blocking"] }
 serde = { version = "1.0.218", features = ["derive"] }
 toml = "0.8.20"
+blake3 = "1.6.1"
