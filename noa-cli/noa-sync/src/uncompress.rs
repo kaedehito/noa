@@ -20,7 +20,7 @@ pub fn uncompress() -> Result<(), Box<dyn std::error::Error>> {
     let xz_decoder = XzDecoder::new(buf_reader);
     let mut archive = Archive::new(xz_decoder);
 
-    let dest = Path::new("/etc/noa/package/package-list/");
+    let dest = Path::new("/etc/noa/package/");
 
     for entry in archive.entries()? {
         let mut entry = entry?;

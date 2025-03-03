@@ -38,6 +38,7 @@ pub fn download_file<P: AsRef<Path>>(url: &str, to: P) -> Result<File, Box<dyn s
     let mut buffer = [0; 4096];
 
     while let Ok(bytes_read) = response.read(&mut buffer) {
+        std::io::stdout().flush().unwrap();
         if bytes_read == 0 {
             break;
         }
@@ -52,6 +53,6 @@ pub fn download_file<P: AsRef<Path>>(url: &str, to: P) -> Result<File, Box<dyn s
         pb.set_position(downloaded);
     }
 
-    pb.finish();
+    pb.finish_and_clear();
     Ok(file)
 }

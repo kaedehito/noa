@@ -1,9 +1,6 @@
 use crate::{download_file::download_file, err};
 use serde::{Deserialize, Serialize};
-use std::{
-    fs,
-    path::Path,
-};
+use std::{fs, path::Path};
 use toml;
 
 #[derive(Serialize, Deserialize)]
@@ -20,7 +17,11 @@ pub fn get_mirror() -> Vec<String> {
     if !path.exists() {
         err!("/etc/noa/mirror/mirror.toml not fonud! downloading default mirror.toml..");
 
-        download_file("https://noa.pik6c.tech/noa/mirror.toml", path).unwrap_or_else(|e| {
+        download_file(
+            "https://kaedehito.secret.jp/downloads/noa/mirror.toml",
+            path,
+        )
+        .unwrap_or_else(|e| {
             err!("Failed to download mirror.toml: {e}");
             std::process::exit(1);
         });
