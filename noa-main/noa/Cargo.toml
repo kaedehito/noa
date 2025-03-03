@@ -8,4 +8,5 @@ edition = "2024"
 clap = { version = "4.5.31", features = ["derive"] }
 init_sys = { path = "../../init-system/initsys/" }
 noa_inst = { path = "../../noa-cli/noa-inst/" }
+noa_sync = { path = "../../noa-cli/noa-sync/" }
 tokio = { version = "1.43.0", features = ["full"] }
